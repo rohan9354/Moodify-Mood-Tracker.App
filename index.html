@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodify - Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Moodify</h1>
+            <p>Track your daily mood effortlessly!</p>
+            <button id="dark-mode-toggle" class="icon-btn">💡</button>
+        </header>
+
+        <section class="card mood-section">
+            <h2>Log Your Mood</h2>
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="Happy">😊 Happy</button>
+                <button class="mood-btn" data-mood="Sad">😢 Sad</button>
+                <button class="mood-btn" data-mood="Angry">😠 Angry</button>
+                <button class="mood-btn" data-mood="Excited">🤩 Excited</button>
+                <button class="mood-btn" data-mood="Calm">😌 Calm</button>
+                <button class="mood-btn" data-mood="Stressed">😩 Stressed</button>
+            </div>
+            <textarea id="mood-note" placeholder="Add a note about your mood..." rows="3"></textarea>
+            <div class="input-group">
+                <label for="mood-date">Date:</label>
+                <input type="date" id="mood-date">
+            </div>
+            <button id="log-mood" class="primary-btn">Log Mood</button>
+        </section>
+
+        <section class="card calendar-section">
+            <h2>Your Mood Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <section class="card chart-section">
+            <h2>Mood Analytics</h2>
+            <canvas id="mood-chart"></canvas>
+        </section>
+
+        <section class="card actions-section">
+            <h2>Actions</h2>
+            <div class="input-group">
+                <label for="delete-date">Delete Mood for Date:</label>
+                <input type="date" id="delete-date">
+            </div>
+            <button id="delete-mood" class="danger-btn">Delete Mood</button>
+            <button id="refresh-app" class="secondary-btn">Refresh All Data</button>
+        </section>
+
+        <div id="note-modal" class="modal">
+            <div class="modal-content card">
+                <span class="close-button">&times;</span>
+                <h3>Mood Details</h3>
+                <p id="modal-day"></p>
+                <p id="modal-mood"></p>
+                <p id="modal-note"></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Moodify. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
